@@ -1,0 +1,43 @@
+.side-navigation {
+  background-color: #fff;
+  visibility: hidden;
+  padding: 0px;
+  position: absolute;
+  z-index: 100000;
+  box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.8);
+
+  &__search {
+    background-image: url(images/icons/search-magnifying-glass.svg);
+    background-position: 95% 50%;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: none;
+    border-bottom: 1px $gray-2-color solid;
+    display: block;
+    font-size: 20px;
+    line-height: 80px;
+    height: 80px;
+    padding: 0px 30px;
+    width: 100%;
+  }
+
+  &__list {
+    border-bottom: 1px $gray-2-color solid;
+    list-style: none;
+    margin: 0px;
+    padding: 30px 0px;
+  }
+
+  &__link {
+    color: $base-color;
+    font-size: 14px;
+    display: block;
+    padding: 0px 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+  }
+
+  @include tablet {
+
+  }
+}

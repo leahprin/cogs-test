@@ -1,0 +1,245 @@
+.header {
+  &__navigation {
+    background-color: $light-color;
+    list-style: none;
+      margin-bottom:15px;
+      border-bottom:1px solid rgba($black, 0.05);
+
+    &-row {
+      @extend .row;
+
+      margin: 0px;
+    }
+    &-list {
+      float: left;
+      margin: 0px 0px 0px -10px;
+      padding: 0px;
+    }
+    &-item {
+      display: inline-block;
+    }
+    &-link {
+      &, &:link, &:visited, &:active, &.active {
+        color: $dark-color;
+        display: inline-block;
+        text-transform: uppercase;
+        padding: 30px 10px;
+        line-height: 20px;
+      }
+    }
+    &-selected {
+      padding: 5px 10px 2px;
+      line-height: 40px;
+    }
+    &-responsive {
+      background-image: url(images/arrow-down.svg);
+      background-size: 30px;
+      background-repeat: no-repeat;
+      background-position: 50% 90%;
+      background-color: #fafafa;
+      display: none;
+      padding: 20px 0px 40px;
+      text-transform: uppercase;
+      text-align: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @include phone-to-tablet {
+        display: none;
+      }
+
+      &--expand {
+        background-image: url(images/arrow-up.svg);
+      }
+
+    }
+
+    @include phone-to-tablet {
+      display: none;
+    }
+  }
+  &__heading {
+    background-color: #fff;
+
+    &-container {
+      @extend .container;
+
+      display: table;
+      position: relative;
+      height: 120px;
+      // width: 100%;
+
+      @include phone-to-tablet {
+        width: 100%;
+      }
+    }
+    &-logo {
+      background-position: 0% 50%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      /* border: 1px $dark-color solid;
+         padding: 0px 20px; */
+      display: inline-block;
+      font-size: 14px;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      text-transform: uppercase;
+      vertical-align: middle;
+
+      &, &:link, &:visited, &:active {
+        color: $dark-color;
+      }
+
+      @include phone {
+        height: 80px;
+        width: 160px;
+      }
+    }
+    &-menu {
+      background-color: $base-color;
+      background-image: url(images/dropdown-arrow.svg);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 10px;
+      border-radius: 5px;
+      content: "";
+      display: inline-block;
+      height: 26px;
+      vertical-align: middle;
+      width: 26px;
+
+      &:hover {
+        background-color: $gray-4-color;
+      }
+
+      &--expand {
+        background-image: url(images/arrow-up-white.svg);
+      }
+
+      @include phone {
+        display: none;
+      }
+    }
+    &-link {
+      &, &:link, &:visited, &:active {
+        color: $base-color;
+        display: inline-block;
+        line-height: 100px;
+        vertical-align: middle;
+        text-transform: uppercase;
+      }
+
+      &--search {
+        &, &:link, &:visited, &:active {
+          background-image: url(images/icons/search.svg);
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: 40px;
+          height: 100px;
+          width: 60px;
+          display: none;
+        }
+
+        @include phone {
+          display: none;
+        }
+      }
+      &--sign-in {
+      }
+      &--profile {
+        &, &:link, &:visited, &:active {
+          background-color: rgba(255,255,255,0.8);
+          background-image: url(images/icons/profile.svg);
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: 40px;
+          height: 120px;
+          position: absolute;
+          right: 0px;
+          top: 0px;
+          height: 120px;
+          width: 120px;
+          z-index: 100;
+
+          @include phone-to-tablet {
+            width: 80px;
+          }
+        }
+      }
+      &--responsive {
+        display: none !important;
+        background-color: rgba(255,255,255,0.8);
+        background-image: url(images/icons/menu.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 40px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        line-height: 120px;
+        height: 120px;
+        width: 120px;
+        z-index: 100;
+
+        @include tablet {
+          display: inline-block !important;
+          width: 80px;
+        }
+        @include phone {
+          display: inline-block !important;
+          background-size: 30px;
+          width: 80px;
+        }
+      }
+
+      @include phone {
+        line-height: 50px;
+      }
+    }
+
+    &--left {
+      display: table-cell;
+      font-size: 0px;
+      vertical-align: middle;
+
+      @include phone-to-tablet {
+        text-align: center;
+      }
+    }
+    &--right {
+      display: table-cell;
+      font-size: 0px;
+      text-align: right;
+      vertical-align: middle;
+      @include phone-to-tablet {
+        display: none;
+      }
+    }
+  }
+  &__search {
+    float: right;
+
+    &-text {
+      background-color: transparent;
+      background-image: url(images/icons/search-magnifying-glass.svg);
+      background-position: 100% 50%;
+      background-repeat: no-repeat;
+      background-size: 24px;
+      border: none;
+      display: inline-block;
+      font-size: 16px;
+      font-style: italic;
+      height: 80px;
+      line-height: 80px;
+      margin: 0px;
+      padding: 20px 20px;
+    }
+  }
+}
+
+#header__menu {
+  display: none;
+}

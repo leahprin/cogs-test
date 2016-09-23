@@ -1,0 +1,31 @@
+{# empty Twig template #}
+<div class="header__navigation-responsive">
+    Menu
+</div>
+<div class="header__navigation">
+    <div class="container">
+        <div class="header__navigation-row">
+            <ul class="header__navigation-list">
+                <li class="header__navigation-item"><a href="{{homeUrl}}" class="header__navigation-link header__navigation-selected">Home</a></li>
+                {% set menuItems = blog.blogMenu %}
+                {% for menuItem in menuItems %}
+                    <li class="header__navigation-item">
+                        <a href="{{menuItem.link |raw}}" class="header__navigation-link" {% if menuItem.target != "" %}target="{{menuItem.target}}"{% endif %}>
+                            {% if menuItem.pageTitle == "" %}
+                                {{menuItem.blogTitle}}
+                            {% else %}
+                                {{menuItem.pageTitle}}
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="header__search">
+                <form action="{{blog.url}}/search" method="get">
+                <input type="text" class="header__search-text" placeholder="Search ..." name="s" value="{{_AppHelper.getRequest('s')}}">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,69 @@
+/* 
+    Created on : Aug 24, 2016, 11:56:25 PM
+    Author     : rohit
+*/
+/************ HEADER USER SIDEBAR ***********/
+.profile__menu-email {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+/***** ARTICLE PAGE *****/
+.news__no_image .news__slides_row {
+    display: none;
+}
+.news__no_image .news__article {
+    padding-top: 0px;
+}
+
+.news__article img {
+    max-width: 100%;
+    height: auto;
+}
+
+.news-comment-container {
+    background-color: transparent;
+}
+
+/***** FOOTER *****/
+.footer__navigation--col-full {
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.footer__navigation--col-2 {
+    border-right: none;
+}
+.footer__logo {
+    height: auto;
+    margin-bottom: 20px;
+    line-height: 1px;
+}
+
+
+/****ARTICLE LISTINGS****/
+.card .articleMenu {
+    display:none;
+    position: absolute;
+    top:10px;
+    right:10px;
+}
+a.card:hover .articleMenu{
+    display:block;
+}
+
+/****SWAPPING***/
+body > a.card {
+    overflow: hidden;
+}
+
+/** No Data **/
+.nodata {
+    padding-top:50px;
+}
+
+.controls-full.captcha img {
+    width:120px;
+}

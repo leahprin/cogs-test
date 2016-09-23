@@ -1,0 +1,21 @@
+{# empty Twig template #}
+<div class="side-navigation">
+    <form action="{{blog.url}}/search" method="get">
+    <input type="text" class="side-navigation__search" placeholder="Search" name="s">
+    </form>
+    <ul class="side-navigation__list">
+        <li class="side-navigation__item"><a class="side-navigation__link side-navigation__selected" href="{{blog.url}}">Home</a></li>
+        {% set menuItems = blog.blogMenu %}
+        {% for menuItem in menuItems %}
+            <li class="side-navigation__item">
+                <a href="{{menuItem.link}}" class="side-navigation__link">
+                    {% if menuItem.pageTitle == "" %}
+                        {{menuItem.blogTitle | capitalize}}
+                    {% else %}
+                        {{menuItem.pageTitle | capitalize}}
+                    {% endif %}
+                </a>
+            </li>
+        {% endfor %}        
+    </ul>
+</div>

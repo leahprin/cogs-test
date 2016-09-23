@@ -1,0 +1,29 @@
+{% set popularArticles = _Article.getPopularArticles({ limit: 5, excludeArticleId : articleId }) %}
+{% if popularArticles|length > 0 %}
+    {% for article in popularArticles %}
+        <div class="col-third-short">
+         <a href="{{article.url}}" class="card card__news {{(article.hasMedia == 'TRUE') ? 'withImage__content' : 'without__image'}} {{(article.isPoromoted) ? 'ad_icon' : ''}}">
+            {% if article.hasMedia == 'TRUE' %}  
+                {% set articleImage = _Media.getMediaUrl(article.featuredMedia,110, 120, {'crop': 'fill'} ) %}
+              <div class="card-image" style="background-image:url({{articleImage}});"></div>
+            {% endif %}
+            <div class="content-section">
+                <div class="title-section">
+                    <span>{{article.blog['title']}}</span>
+                    <div class="card-icon"></div>
+                </div>
+                {% set articleTitle =  titleTruncateLength is defined ? article.title | truncate(titleTruncateLength) : article.title  %}
+                <h1 class="heading-section">{{ articleTitle | raw }}</h1>
+                <p class="description">{{article.excerpt | raw}}</p>
+                <div class="caption_bottom">
+                    <div class="author_name">{{article.createdBy['displayName']}}</div>
+                    <div class="post_date">{{article.publishedDate}}</div>
+                    <span class="category_share_icon shareIcons"><i class="fa fa-share-alt"></i></span>
+                </div>
+            </div>
+        </a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p class="nodata text-center">No data found.</p>
+{% endif %}

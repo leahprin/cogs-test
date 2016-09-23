@@ -1,0 +1,17 @@
+# MISC FILES
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+*.sublime-workspace
+*.sublime-project
+_notes
+dwsync.xml
+logs/*
+node_modules
+.idea/*
+deploy
